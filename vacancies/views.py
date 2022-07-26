@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .models import Vacancy
-from .serializer import VacancySerializer, DetailVacancySerializer
+from .serializer import VacancySerializer, DetailVacancySerializer, CategorySerializer, RegionSerializer, \
+    DistrictSerializer
 from rest_framework import generics
 from helpers.pagination import CustomPagination
 

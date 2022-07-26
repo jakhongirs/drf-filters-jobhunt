@@ -51,7 +51,9 @@ class Vacancy(BaseModel):
     content = models.TextField()
     published_datetime = models.DateTimeField(auto_now_add=True, null=True, blank=True)
     company_name = models.CharField(max_length=128)
-    salary = models.IntegerField(default=0)
+    min_salary = models.IntegerField(default=0, null=True, blank=True)
+    max_salary = models.IntegerField(default=0, null=True, blank=True)
+    is_interview_salary = models.BooleanField(default=False)
     status = models.CharField(max_length=128, choices=VACANCY_STATUS_CHOICES)
 
     region = models.ForeignKey(Region, on_delete=models.CASCADE, null=True, blank=True, related_name='vacancies')
