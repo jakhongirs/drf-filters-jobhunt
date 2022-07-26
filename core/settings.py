@@ -39,6 +39,7 @@ INSTALLED_APPS = [
 
     'rest_framework',
     'drf_yasg',
+    'django_filters',
 
     'common',
     'vacancies',
@@ -134,3 +135,7 @@ try:
     from .local_settings import *  # noqa
 except ImportError:
     pass  # noqa
+
+REST_FRAMEWORK = {
+    'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend']
+}

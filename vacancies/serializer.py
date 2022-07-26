@@ -11,7 +11,7 @@ class CategorySerializer(serializers.ModelSerializer):
 class RegionSerializer(serializers.ModelSerializer):
     class Meta:
         model = Region
-        fields = ["name"]
+        fields = ["name", "slug"]
 
 
 class DistrictSerializer(serializers.ModelSerializer):
