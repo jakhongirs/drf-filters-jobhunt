@@ -15,6 +15,15 @@ VACANCY_STATUS_CHOICES = (
 )
 
 
+# CATEGORY:
+class Category(BaseModel):
+    name = models.CharField(max_length=128)
+    slug = models.CharField(max_length=128, unique=True)
+
+    def __str__(self):
+        return self.name
+
+
 # REGION:
 class Region(BaseModel):
     name = models.CharField(max_length=128)
@@ -33,12 +42,6 @@ class District(BaseModel):
 
     def __str__(self):
         return self.name
-
-
-# CATEGORY:
-class Category(BaseModel):
-    slug = models.CharField(max_length=128, unique=True)
-    name = models.CharField(max_length=128)
 
 
 # VACANCY:
